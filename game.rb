@@ -11,14 +11,14 @@ class Game
 		puts "You will choose a spot that matches with the grid below."
     puts "|_#{@board[0]}_|_#{@board[1]}_|_#{@board[2]}_|\n|_#{@board[3]}_|_#{@board[4]}_|_#{@board[5]}_|\n|_#{@board[6]}_|_#{@board[7]}_|_#{@board[8]}_|\n"
   	if @computer == false
-			then until game_is_over(@board) || tie(@board)
+			until game_is_over(@board) || tie(@board)
       			get_human_spot
       			if !game_is_over(@board) && !tie(@board)
         		eval_board
       			end
     			end
 		elsif @computer == true
-			then until game_is_over(@board) || tie(@board)
+			until game_is_over(@board) || tie(@board)
       			eval_board
       			if !game_is_over(@board) && !tie(@board)
         		get_human_spot
@@ -116,18 +116,18 @@ class Game
 	def symbol_choice
 		@symbol = gets.chomp.downcase
 		if @symbol == "x"
-			then @hum = "X"
+				@hum = "X"
 		elsif @symbol == "o"
-			then @hum = "O"
+						@hum = "O"
 		else 
 			puts "Sorry, you have to pick X or O"
 			symbol_choice
 		end
 	
 		if @hum == "X"
-				then @com = "O"
+				@com = "O"
 		elsif @hum == "O"
-						then @com = "X"
+						@com = "X"
 		else nil
 		end
 	end
@@ -135,9 +135,9 @@ class Game
 	def choose_turn
 		@choice = gets.chomp.to_i
 		if @choice == 1
-			@computer = false
+				@computer = false
 		elsif @choice == 2
-			@computer = true
+						@computer = true
 		else 
 			puts "You need to choose 1 for yourself or 2 for the computer."
 			choose_turn
