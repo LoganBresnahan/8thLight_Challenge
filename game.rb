@@ -116,9 +116,9 @@ class Game
 	def symbol_choice
 		@symbol = gets.chomp.downcase
 		if @symbol == "x"
-			then @hum = "X" #&& @com = "O"
+			then @hum = "X"
 		elsif @symbol == "o"
-			then @hum = "O" #&& @com = "X"
+			then @hum = "O"
 		else 
 			puts "Sorry, you have to pick X or O"
 			symbol_choice
